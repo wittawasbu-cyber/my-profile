@@ -3,15 +3,15 @@
   --bg: #97b2f8;
   --card-bg: #d7e3fc;
   --text: #1f2933;
-  --accent: #3f42f5;
+  --accent: #e436b0;
 }
  
 /* ธีมมืด: สลับด้วยการเติม class ที่ <body> ผ่าน JS */
 body.dark {
   --bg: #0f172a;
   --card-bg: #1e293b;
-  --text: #e2e8f0;
-  --accent: #60a5fa;
+  --text: #dbee2d;
+  --accent: #2c47dd;
 }
  
 /* ===== Layout ===== */
@@ -107,4 +107,3 @@ body {
   color: #ffffff;
   cursor: pointer;
 }
-

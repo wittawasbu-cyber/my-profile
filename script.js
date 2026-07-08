@@ -16,7 +16,7 @@ toggleButton.addEventListener('click', () => {
   document.body.classList.toggle('dark', isDark);
  
   // ใช้ template literal ตามมาตรฐานของวิชา
-  toggleButton.textContent = isDark ? ☀️ โหมดกลางวัน : `🌙 โหมดกลางคืน`;
+  toggleButton.textContent = isDark ? `☀️ โหมดกลางวัน` : `🌙 โหมดกลางคืน`;
 });
  
 // ===== Footer: ปีอัตโนมัติด้วย template literal =====
@@ -36,4 +36,3 @@ nameInput.addEventListener('input', () => {
     profileName.textContent = "ชื่อ สกุล";
   }
 });
-
