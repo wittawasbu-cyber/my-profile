@@ -1,20 +1,20 @@
 // ดึง Element ต่างๆ มาใช้งาน
-const themeToggle = document.getElementById('theme-toggle');
-const timeBtn = document.getElementById('time-btn');
 const nameInput = document.getElementById('name-input');
 const displayName = document.getElementById('display-name');
+const timeBtn = document.getElementById('time-btn');
+const themeToggle = document.getElementById('theme-toggle');
 
-// กำหนดชื่อเริ่มต้นไว้
-const defaultName = "wittawas Bunsaenyou";
+// กำหนดข้อความเริ่มต้น (กรณีลบจนช่องรับข้อความว่างเปล่า)
+const defaultName = "ชื่อ นามสกุล";
 
-// ฟังก์ชันเปลี่ยนชื่อตามกล่องข้อความที่พิมพ์
+// ฟังก์ชันรับข้อความจากช่องพิมพ์แล้วเปลี่ยนข้อความด้านบนการ์ด
 nameInput.addEventListener('input', (e) => {
-    const value = e.target.value.trim();
+    const value = e.target.value;
     
-    if (value !== "") {
-        displayName.textContent = value; // เปลี่ยนเป็นข้อความที่พิมพ์
+    if (value.trim() !== "") {
+        displayName.textContent = value; // เปลี่ยนตามข้อความใหม่ที่พิมพ์
     } else {
-        displayName.textContent = defaultName; // ถ้าลบจนว่าง ให้ใช้ชื่อเริ่มต้น
+        displayName.textContent = defaultName; // หากลบจนว่าง ให้แสดงคำว่า "ชื่อ นามสกุล" เหมือนเดิม
     }
 });
 
