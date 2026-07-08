@@ -29,7 +29,11 @@
 
  
     <button id="theme-toggle" class="card__button">🌙 โหมดกลางคืน</button>
-
+<!-- เพิ่มปุ่มและข้อความแสดงเวลาตรงนี้ -->
+    <div style="margin: 15px 0;">
+      <button id="time-btn" class="card__button card__button--large" style="background-color: #c9302c; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600;">ขณะนี้เวลา</button>
+      <p id="time-display" style="margin-top: 10px; font-size: 18px; font-weight: 700; color: #1a202c; display: none;">ขณะนี้เวลา: <span id="time-text"></span></p>
+    </div>
     <!-- งาน3 -->
     <div style="margin: 15px 0; width: 100%;">
       <input type="text" id="name-input" class="textinput" placeholder="พิมพ์ชื่อใหม่เพื่อเปลี่ยนชื่อ...">

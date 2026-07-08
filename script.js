@@ -36,3 +36,18 @@ nameInput.addEventListener('input', () => {
     profileName.textContent = "ชื่อ สกุล";
   }
 });
+// ดึง Element ของระบบเวลามาใช้งาน
+const timeBtn = document.getElementById('time-btn');
+const timeDisplay = document.getElementById('time-display');
+const timeText = document.getElementById('time-text');
+
+// ฟังก์ชันกดปุ่มแล้วแสดงเวลาปัจจุบัน
+timeBtn.addEventListener('click', () => {
+    const now = new Date();
+    // แปลงเวลาให้อยู่ในรูปแบบ HH:MM:SS
+    const timeString = now.toLocaleTimeString('th-TH', { hour12: false });
+    
+    // ใส่ข้อความเวลาเข้าไปและสั่งให้เปิดแสดงผล (ลบ display: none ออก)
+    timeText.textContent = timeString;
+    timeDisplay.style.display = 'block';
+});
