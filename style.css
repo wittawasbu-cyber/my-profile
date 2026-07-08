@@ -1,105 +1,156 @@
-/* ===== ตัวแปรสี (CSS Custom Properties) ===== */
-:root {
-  --bg: #0b225a;
-  --card-bg: #360f0f;
-  --text: #1f2933;
-  --accent: #2563eb;
-}
- 
-/* ธีมมืด: สลับด้วยการเติม class ที่ <body> ผ่าน JS */
-body.dark {
-  --bg: #0f172a;
-  --card-bg: #1e293b;
-  --text: #0a55b6;
-  --accent: #ec8f04;
-}
- 
-/* ===== Layout ===== */
+/* รีเซ็ตค่าพื้นฐานและตั้งฟอนต์ Noto Sans Thai */
 * {
-  box-sizing: border-box;
-  margin: 0;
-}
- 
-body {
-  font-family: 'Noto Sans Thai', sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  transition: background-color 0.3s;
-}
- 
-/* ===== การ์ดนามบัตร ===== */
-.card {
-  background-color: var(--card-bg);
-  width: min(420px, 90vw);
-  padding: 2.5rem 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  text-align: center;
-  transition: background-color 0.3s;
-}
- 
-.card__avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--accent);
-}
- 
-.card__name {
-  margin-top: 1rem;
-  font-size: 1.6rem;
-}
- 
-.card__title {
-  color: var(--accent);
-  font-weight: 600;
-}
- 
-.card__bio {
-  margin-top: 0.75rem;
-  line-height: 1.7;
-}
- 
-.card__links {
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
- 
-.card__links a {
-  color: var(--accent);
-  font-weight: 600;
-}
- 
-.card__button {
-  margin-top: 1.5rem;
-  padding: 0.6rem 1.4rem;
-  font-family: inherit;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: var(--accent);
-  color: #ffffff;
-  cursor: pointer;
-}
- 
-.card__footer {
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-  opacity: 0.7;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
-.card__test-text {
-    margin-top: 50px;     /* เว้นระยะห่างจากปุ่มโหมดกลางคืนด้านบน */
-    margin-bottom: 30px;  /* เว้นระยะห่างก่อนถึง footer ด้านล่าง */
-    font-size: 14px;      /* ขนาดตัวอักษรพอเหมาะ */
-    color: #666;          /* สีเทาเข้มเพื่อให้ดูสบายตา ไม่เด่นแย่งจุดอื่น */
-    font-weight: 600;     /* ปรับให้ตัวหนาขึ้นเล็กน้อย */
+body {
+    background-color: #f3f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ตัวการ์ดโมดอลหลัก */
+.card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 430px;
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* กรอบรูปโปรไฟล์ทรงกลม ขอบสีดำ-แดง */
+.card__avatar-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #c9302c;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.card__avatar {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+/* ชื่อ นามสกุล */
+.card__name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+/* ตำแหน่ง (สีแดง) */
+.card__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #c9302c;
+    margin-bottom: 15px;
+}
+
+/* รายละเอียดประวัติ */
+.card__bio {
+    font-size: 15px;
+    color: #4a5568;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 90%;
+}
+
+/* ส่วนของลิงก์ GitHub, Email */
+.card__links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.card__links a {
+    color: #c9302c;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.card__links a:hover {
+    color: #a3221f;
+}
+
+/* ปุ่มกดสไตล์สีแดงตามรูปภาพ */
+.card__button {
+    background-color: #c9302c;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 20px;
+}
+
+.card__button:hover {
+    background-color: #a3221f;
+}
+
+/* ปุ่มขนาดใหญ่ (ขณะนี้เวลา) */
+.card__button--large {
+    padding: 12px 35px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+/* ส่วน Footer แสดงลิขสิทธิ์ */
+.card__footer {
+    font-size: 13px;
+    color: #718096;
+    margin-bottom: 15px;
+}
+
+/* ส่วนฟอร์มกรอกชื่อด้านล่าง */
+.card__input-group {
+    width: 100%;
+    text-align: center;
+}
+
+.card__input-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.card__input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #c9302c;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    text-align: left;
+}
+
+.card__input::placeholder {
+    color: #a0aec0;
 }
