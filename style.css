@@ -1,7 +1,7 @@
 /* ===== ตัวแปรสี (CSS Custom Properties) ===== */
 :root {
-  --bg: #f4f6fb;
-  --card-bg: #ffffff;
+  --bg: #0b225a;
+  --card-bg: #360f0f;
   --text: #1f2933;
   --accent: #2563eb;
 }
@@ -10,8 +10,8 @@
 body.dark {
   --bg: #0f172a;
   --card-bg: #1e293b;
-  --text: #1469d8;
-  --accent: #a16914;
+  --text: #0a55b6;
+  --accent: #ec8f04;
 }
  
 /* ===== Layout ===== */
