@@ -10,42 +10,37 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
  
+  <!-- CSS ภายนอก: สังเกตว่าเป็น relative path (./) -->
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <main class="card">
-    <!-- รูปโปรไฟล์ GitHub พร้อมขอบสีแดงตามรูปภาพ -->
-    <div class="card__avatar-container">
-      <img class="card__avatar" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="รูปโปรไฟล์">
-    </div>
-
-    <h1 class="card__name">ชือ นามสกุล</h1>
+    <img class="card__avatar" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="รูปโปรไฟล์">
+    <!-- เปลียนชื่อสลุนตามที่ต้องการ -->
+    <h1 id="profile-name" class="card__name">ชื่อ สกุล</h1> 
+    
     <p class="card__title">นักศึกษาวิศวกรรมคอมพิวเตอร์</p>
     <p class="card__bio">กำลังเรียนรู้ Full-stack Development และ DevOps</p>
  
-    <ul class="card__links">
+  <ul class="card__links">
       <li><a href="https://github.com/wittawasbu-cyber" target="_blank">GitHub</a></li>
       <li><a href="mailto:wittawas.bu@ksu.ac.th">Email</a></li>
     </ul>
+
  
-    <!-- ปุ่มโหมดกลางคืน (สีแดง) -->
     <button id="theme-toggle" class="card__button">🌙 โหมดกลางคืน</button>
+
+    <!-- งาน3 -->
+    <div style="margin: 15px 0; width: 100%;">
+      <input type="text" id="name-input" class="textinput" placeholder="พิมพ์ชื่อใหม่เพื่อเปลี่ยนชื่อ...">
+    </div>  
+    <!-- จบงาน3 -->
  
-    <!-- ข้อความระบุลิขสิทธิ์ -->
-    <footer id="card-footer" class="card__footer">
-      © 2026 — Deploy ด้วย GitHub Pages 🚀
-    </footer>
-
-    <!-- ปุ่มขณะนี้เวลา -->
-    <button id="time-btn" class="card__button card__button--large">ขณะนี้เวลา</button>
-
-    <!-- ส่วนรับข้อมูลกล่องพิมพ์ชื่อด้านล่าง -->
-    <div class="card__input-group">
-      <label for="name-input" class="card__input-label">ลองพิมพ์ชื่อของคุณที่นี่:</label>
-      <input type="text" id="name-input" class="card__input" placeholder="ข้อความของคุณ">
-    </div>
+    <footer id="card-footer" class="card__footer"></footer>
   </main>
  
+  <!-- JS ภายนอก: วางท้าย body เสมอ -->
   <script src="./script.js"></script>
 </body>
 </html>
+

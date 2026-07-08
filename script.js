@@ -1,31 +1,39 @@
-// ดึง Element ต่างๆ มาใช้งาน
-const nameInput = document.getElementById('name-input');
-const displayName = document.getElementById('display-name');
-const timeBtn = document.getElementById('time-btn');
-const themeToggle = document.getElementById('theme-toggle');
+// ===== State =====
+let isDark = false;
+ 
+// ===== Element References =====
+const toggleButton = document.querySelector('#theme-toggle');
+const footer = document.querySelector('#card-footer');
+ 
+// งานที่3
+const nameInput = document.querySelector('#name-input');
+const profileName = document.querySelector('#profile-name');
 
-// กำหนดข้อความเริ่มต้น (กรณีลบจนช่องรับข้อความว่างเปล่า)
-const defaultName = "ชื่อ นามสกุล";
+// ===== Event: สลับธีม =====
+// สังเกต: ผูก event ใน JS ไม่ใช่ onclick ใน HTML (Separation of Concerns)
+toggleButton.addEventListener('click', () => {
+  isDark = !isDark;
+  document.body.classList.toggle('dark', isDark);
+ 
+  // ใช้ template literal ตามมาตรฐานของวิชา
+  toggleButton.textContent = isDark ? ☀️ โหมดกลางวัน : `🌙 โหมดกลางคืน`;
+});
+ 
+// ===== Footer: ปีอัตโนมัติด้วย template literal =====
+const currentYear = new Date().getFullYear();
+footer.innerHTML = `
+  <div>ทดสอบวิชาหัวข้อพิเศษซอฟต์แวร์</div>
+  <div>© ${currentYear} — Deploy ด้วย GitHub Pages 🚀</div>
+`;
 
-// ฟังก์ชันรับข้อความจากช่องพิมพ์แล้วเปลี่ยนข้อความด้านบนการ์ด
-nameInput.addEventListener('input', (e) => {
-    const value = e.target.value;
-    
-    if (value.trim() !== "") {
-        displayName.textContent = value; // เปลี่ยนตามข้อความใหม่ที่พิมพ์
-    } else {
-        displayName.textContent = defaultName; // หากลบจนว่าง ให้แสดงคำว่า "ชื่อ นามสกุล" เหมือนเดิม
-    }
+// ===== Event: เปลี่ยนชื่อตามที่พิมพ์ (งานที่ 3) =====
+nameInput.addEventListener('input', () => {
+  if (nameInput.value.trim() !== "") {
+    // ถ้าพิมพ์อะไรลงไปในกล่อง ให้ชื่อ สกุล ด้านบนเปลี่ยนตามทันที
+    profileName.textContent = nameInput.value;
+  } else {
+    // ถ้าลบในกล่องจนว่างเปล่า ให้กลับมาแสดงคำว่า "ชื่อ สกุล" ตามค่าเริ่มต้นใน HTML
+    profileName.textContent = "ชื่อ สกุล";
+  }
 });
 
-// ระบบเมื่อกดปุ่มขณะนี้เวลา
-timeBtn.addEventListener('click', () => {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString('th-TH');
-    alert(`ขณะนี้เวลา: ${timeString}`);
-});
-
-// ระบบเมื่อกดปุ่มโหมดกลางคืน
-themeToggle.addEventListener('click', () => {
-    alert('ระบบกำลังพัฒนาฟังก์ชันโหมดกลางคืนเร็วๆ นี้!');
-});
